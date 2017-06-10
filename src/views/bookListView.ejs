@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>
+        Book Library
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href='/images/favicon.ico' />
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/lib/sweetalert2/dist/sweetalert2.css" />
+    <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/css/elastislide.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- endinject -->
+    <!-- bower:js -->
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/lib/es6-promise/promise.js"></script>
+    <script src="/lib/sweetalert2/dist/sweetalert2.js"></script>
+    <script src="/lib/modernizr/src/Modernizr.js"></script>
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="/js/checkForm.js"></script>
+    <script src="/js/gallery.js"></script>
+    <script src="/js/jquery.elastislide.js"></script>
+    <script src="/js/jquery.tmpl.min.js"></script>
+    <!-- endinject -->
+    <script>
+        $(window).load(function () {
+            // Animate loader off screen
+            setTimeout(function () {
+                $(".se-pre-con").fadeOut("slow");
+            }, 800);
+
+        });
+    </script>
+    <script>
+        smoothScroll('.booksList');
+    </script>
+
+    <!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+    <div class="se-pre-con"></div>
+    <header class="navbar navbar-bright navbar-fixed-top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">Home</a>
+            </div>
+            <nav class="collapse navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav">
+                    <% for(var i=0 ;i<nav.length;i++){%>
+                        <li>
+                            <a href="<%=nav[i].Link%>">
+                                <%=nav[i].Text%>
+                            </a>
+                        </li>
+                        <%}%>
+                </ul>
+                <ul class="nav navbar-right navbar-nav">
+                    <%if(status.Text ==='Log Out'){%>
+                        <li>
+                            <a href="<%=status.Link%>">
+                                <%=status.Text%>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/Search" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+                            <ul class="dropdown-menu" style="padding:12px; background:white">
+                                <form class="form-inline" action="/Search">
+                                    <div class="container">
+                                        <div class="row pad-btm-40">
+                                            <div class="span16">
+                                                <div class="spaceEmOut">
+                                                    <fieldset class="switch switch-two">
+                                                        <legend>Search</legend>
+                                                        <input id="title" name="option" type="radio" value="title" checked />
+                                                        <label for="title">Title</label>
+                                                        <input id="author" name="option" type="radio" value="author" />
+                                                        <label for="author">Author</label>
+                                                        <span class="switch-button"></span>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control pull-left" onblur="if (this.value == '') {this.value = 'Search Library';}" placeholder="Search Library" name="q" required>
+                                    <button type="submit" class="btn btn-default pull-right" href="/Search/Results"><i class="glyphicon glyphicon-search"></i></button>
+
+                                </form>
+                            </ul>
+                        </li>
+                        <%}else{%>
+                            <li>
+                                <a href="<%=status.Link%>">
+                                    <%=status.Text%>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="/Search" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+                                <ul class="dropdown-menu" style="padding:12px; background:white">
+                                    <form class="form-inline" action="/Search">
+                                        <div class="container">
+                                            <div class="row pad-btm-40">
+                                                <div class="span16">
+                                                    <div class="spaceEmOut">
+                                                        <fieldset class="switch switch-two">
+                                                            <legend>Search</legend>
+                                                            <input id="title" name="option" type="radio" value="title" checked />
+                                                            <label for="title">Title</label>
+                                                            <input id="author" name="option" type="radio" value="author" />
+                                                            <label for="author">Author</label>
+                                                            <span class="switch-button"></span>
+                                                        </fieldset>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control pull-left" onblur="if (this.value == '') {this.value = 'Search Library';}" placeholder="Search Library" name="q" required>
+                                        <button type="submit" class="btn btn-default pull-right" href="/Search/Results"><i class="glyphicon glyphicon-search"></i></button>
+
+                                    </form>
+                                </ul>
+                            </li>
+                            <%}%>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-body">
+                        <!--/stories-->
+                        <% for(var i=books.length-1 ;i>=0;i--){%>
+                            <hr>
+                            <div class="row">
+                                <br>
+                                <div class="col-md-2 col-sm-3 text-center">
+                                    <a class="story-title" href="/Books/<%=books[i]._id%>"><img alt="<%=books[i].title%>" src="<%=books[i].image_url%>" style="width:100px;height:100px" class="img-circle"></a>
+                                </div>
+                                <div class="col-md-10 col-sm-9">
+                                    <h3><%=books[i].title%></h3>
+                                    <div class="row">
+                                        <div class="col-xs-9">
+                                            <h4><span class="label label-default"><%=books[i].author%></span></h4>
+                                            <br>
+                                            <h4><span class="label label-default">Genre: <%=books[i].genre%></span></h4>
+                                            <br>
+                                            <h4><span class="label label-default">Added By <%=books[i].user%></span></h4>
+                                        </div>
+                                        <div class="col-xs-3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <%}%>
+                                <hr>
+                                <!--/stories-->
+                                <div class="main">
+                                    <div class="header">
+                                        <%if(nonUser ==='login'){%>
+                                            <h1>Wanna add more Books ! Log In</h1>
+                                            <%}%>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+            </div>
+            <!--/col-12-->
+        </div>
+    </div>
+    <hr>
+    <div class="container" id="footer">
+        <div class="row">
+            <div class="col col-sm-12">
+                <h1>Follow Shubham</h1>
+                <div class="btn-group">
+                    <a class="btn btn-twitter btn-lg" href="https://twitter.com/imshubhamsingh_"><i class="icon-twitter icon-large"></i> Twitter</a>
+                    <a class="btn btn-facebook btn-lg" href="https://www.facebook.com/profile.php?id=100002311869554"><i class="icon-facebook icon-large"></i> Facebook</a>
+                    <a class="btn btn-google-plus btn-lg" href="https://plus.google.com/115427087149124374335/about"><i class="icon-google-plus icon-large"></i> Google+</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <hr>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <ul class="list-inline">
+                        <li><i class="icon-facebook icon-2x"></i></li>
+                        <li><i class="icon-twitter icon-2x"></i></li>
+                        <li><i class="icon-google-plus icon-2x"></i></li>
+                        <li><i class="icon-pinterest icon-2x"></i></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <p class="pull-right">Shubham Singh<i class="icon-heart-empty"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

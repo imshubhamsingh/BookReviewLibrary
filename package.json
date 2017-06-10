@@ -1,0 +1,46 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "Building Website using NodeJs and Express ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Shubham Singh",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.1",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.4.2",
+    "elasticsearch": "^11.0.1",
+    "express": "^4.14.0",
+    "express-passport-logout": "^0.1.0",
+    "express-session": "^1.14.0",
+    "fs": "0.0.2",
+    "http": "0.0.0",
+    "mongodb": "^2.2.2",
+    "nodemailer": "0.7.1",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth20": "^1.0.0",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.4",
+    "xml2js": "^0.4.17"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-inject": "^4.1.0",
+    "gulp-jscs": "^4.0.0",
+    "gulp-jscs-html-reporter": "^0.1.1",
+    "gulp-jscs-stylish": "^1.4.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-nodemon": "^2.1.0",
+    "jscs": "^3.0.7",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0",
+    "wiredep": "^4.0.0"
+  }
+}

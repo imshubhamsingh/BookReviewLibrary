@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/lib/sweetalert2/dist/sweetalert2.css" />
+    <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/css/elastislide.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- endinject -->
+    <!-- bower:js -->
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/lib/es6-promise/promise.js"></script>
+    <script src="/lib/sweetalert2/dist/sweetalert2.js"></script>
+    <script src="/lib/modernizr/src/Modernizr.js"></script>
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="/js/checkForm.js"></script>
+    <script src="/js/gallery.js"></script>
+    <script src="/js/jquery.elastislide.js"></script>
+    <script src="/js/jquery.tmpl.min.js"></script>
+    <!-- endinject -->
+    <!-- inline scripts --->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript">
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <script>
+        <% if (username == 0||invalid ==0) {%>
+        $(window).load(function () {
+            // Animate loader off screen
+            setTimeout(function () {
+                $(".se-pre-con").fadeOut("slow");
+            }, 500);
+
+        });
+        <%}else{%>
+        $(window).load(function () {
+            // Animate loader off screen
+            setTimeout(function () {
+                $(".se-pre-con").fadeOut("slow");
+            }, 2500);
+        });
+        <%}%>
+    </script>
+    <script type="text/javascript">
+        $('#slider').elastislide();
+    </script>
+
+
+
+    <!-- endinlinescript -->
+
+    <!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '845305342268635',
+                xfbml: true,
+                version: 'v2.7'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div class="se-pre-con"></div>
+    <header class="navbar navbar-bright navbar-fixed-top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">Home</a>
+            </div>
+            <nav class="collapse navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav">
+                    <% for(var i=0 ;i<nav.length;i++){%>
+                        <li>
+                            <a href="<%=nav[i].Link%>">
+                                <%=nav[i].Text%>
+                            </a>
+                        </li>
+                        <%}%>
+                </ul>
+                <ul class="nav navbar-right navbar-nav">
+                    <li>
+                        <a href="<%=status.Link%>">
+                            <%=status.Text%>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="/Search" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+                        <ul class="dropdown-menu" style="padding:12px; background:white">
+                            <form class="form-inline" action="/Search">
+                                <div class="container">
+                                    <div class="row pad-btm-40">
+                                        <div class="span16">
+                                            <div class="spaceEmOut">
+                                                <fieldset class="switch switch-two">
+                                                    <legend>Search</legend>
+                                                    <input id="title" name="option" type="radio" value="title" checked />
+                                                    <label for="title">Title</label>
+                                                    <input id="author" name="option" type="radio" value="author" />
+                                                    <label for="author">Author</label>
+                                                    <span class="switch-button"></span>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control pull-left" onblur="if (this.value == '') {this.value = 'Search Library';}" name="q" placeholder="Search Library" required>
+                                <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button>
+
+                            </form>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="masthead">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h1>Book Library
+          <p class="lead"></p>
+        </h1>
+                </div>
+                <div class="col-md-5">
+
+                </div>
+            </div>
+        </div>
+        <!-- /cont -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                </div>
+            </div>
+        </div>
+        <!-- /cont -->
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-body">
+                        <!--/stories-->
+
+                        <!-- Elastislide Carousel -->
+
+                        <div id="rg-gallery" class="rg-gallery">
+                            <div class="rg-thumbs">
+                                <!-- Elastislide Carousel Thumbnail Viewer -->
+                                <div class="es-carousel-wrapper">
+                                    <div class="es-nav">
+                                        <span class="es-nav-prev">Previous</span>
+                                        <span class="es-nav-next">Next</span>
+                                    </div>
+                                    <div class="es-carousel">
+                                        <ul>
+                                            <%for(var i=books.length-1;i>=0;i--){%>
+                                                <li>
+                                                    <a href="/Books/<%=books[i]._id%>"><img src="<%=books[i].image_url%>" alt="<%=books[i].title%>"></a>
+                                                </li>
+                                                <%}%>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Elastislide Carousel Thumbnail Viewer -->
+                        </div>
+                        <!-- rg-thumbs -->
+                        <!-- End Elastislide Carousel -->
+                        <h1><cite><center>There are many people who consider books as a dying art form, especially as physical objects. While I accept that books will one day be nothing more than words on a screen, stories will always live on. They’ve been with us for millennia – and written down for centuries – and they’ll outlive everybody reading this.</center></cite></h1>
+                        <br>
+                        <h1><center>Sometimes you buy books on impulse or because you heard it was good. In other cases due diligence is necessary and maybe you want to read a few reviews first. </center></h1>
+                        <h1><center>Here are list of books added by bibliophiles that you want to read or might have read before with their review</center></h1>
+                        <br>
+                        <br>
+                        <h1><center>Let me know what you think of this website, and also add your own book to the list.</center></h1>
+                        <!--/stories-->
+                        <br>
+                        <br>
+                        <a href="/Login" class="btn btn-primary pull-right btnNext">Login<i class="glyphicon glyphicon-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!--/col-12-->
+        </div>
+    </div>
+    <hr>
+    <div class="container" id="footer">
+        <div class="row">
+            <div class="col col-sm-12">
+                <h1>Follow Shubham</h1>
+                <div class="btn-group">
+                    <a class="btn btn-twitter btn-lg" href="https://twitter.com/imshubhamsingh_"><i class="icon-twitter icon-large"></i> Twitter</a>
+                    <a class="btn btn-facebook btn-lg" href="https://www.facebook.com/profile.php?id=100002311869554"><i class="icon-facebook icon-large"></i> Facebook</a>
+                    <a class="btn btn-google-plus btn-lg" href="https://plus.google.com/115427087149124374335/about"><i class="icon-google-plus icon-large"></i> Google+</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <hr>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <ul class="list-inline">
+                        <li><i class="icon-facebook icon-2x"></i></li>
+                        <li><i class="icon-twitter icon-2x"></i></li>
+                        <li><i class="icon-google-plus icon-2x"></i></li>
+                        <li><i class="icon-pinterest icon-2x"></i></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <p class="pull-right">Shubham Singh<i class="icon-heart-empty"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

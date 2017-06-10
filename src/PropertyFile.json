@@ -1,0 +1,21 @@
+{
+  "facebook":{
+    "clientID": "",
+    "clientSecret": "",
+    "callbackURL": ""
+  },
+  "google":{
+    "clientID": "",
+    "clientSecret": "",
+    "callbackURL": ""
+  },
+  "twitter":{
+    "consumerKey": "",
+    "consumerSecret": "",
+    "callbackURL": ""
+  },
+  "admin":{
+    "email":"",
+    "password":""
+  }
+}

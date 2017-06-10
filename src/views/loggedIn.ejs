@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>
+        Home
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href='/images/favicon.ico' />
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/lib/sweetalert2/dist/sweetalert2.css" />
+    <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/css/elastislide.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- endinject -->
+    <!-- bower:js -->
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/lib/es6-promise/promise.js"></script>
+    <script src="/lib/sweetalert2/dist/sweetalert2.js"></script>
+    <script src="/lib/modernizr/src/Modernizr.js"></script>
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="/js/checkForm.js"></script>
+    <script src="/js/gallery.js"></script>
+    <script src="/js/jquery.elastislide.js"></script>
+    <script src="/js/jquery.tmpl.min.js"></script>
+    <!-- endinject -->
+    <script>
+        $(window).load(function () {
+            // Animate loader off screen
+            setTimeout(function () {
+                $(".se-pre-con").fadeOut("slow");
+            }, 600);
+
+        });
+    </script>
+    <script>
+        var thumbnailSliderOptions = {
+            sliderId: "thumbnail-slider",
+            orientation: "horizontal",
+            thumbWidth: "500px",
+            thumbHeight: "auto",
+            showMode: "1",
+            autoAdvance: true,
+            selectable: true,
+            slideInterval: 3000,
+            transitionSpeed: 1500,
+            shuffle: false,
+            startSlideIndex: 0, //0-based
+            pauseOnHover: true,
+            initSliderByCallingInitFunc: false,
+            rightGap: 0,
+            keyboardNav: true,
+            mousewheelNav: false,
+            before: null,
+            license: "b2e98"
+        };
+        var mcThumbnailSlider = new ThumbnailSlider(thumbnailSliderOptions);
+    </script>
+
+    <!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+    <div class="se-pre-con"></div>
+    <header class="navbar navbar-bright navbar-fixed-top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">Home</a>
+            </div>
+            <nav class="collapse navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav">
+                    <% for(var i=0 ;i<nav.length;i++){%>
+                        <li>
+                            <a href="<%=nav[i].Link%>">
+                                <%=nav[i].Text%>
+                            </a>
+                        </li>
+                        <%}%>
+
+                </ul>
+                <ul class="nav navbar-right navbar-nav">
+                    <li>
+                        <a href="/Auth/logOut">Log Out</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="/Search" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+                        <ul class="dropdown-menu" style="padding:12px; background:white">
+                            <form class="form-inline" action="/Search">
+                                <div class="container">
+                                    <div class="row pad-btm-40">
+                                        <div class="span16">
+                                            <div class="spaceEmOut">
+                                                <fieldset class="switch switch-two">
+                                                    <legend>Search</legend>
+                                                    <input id="title" name="option" type="radio" value="title" checked />
+                                                    <label for="title">Title</label>
+                                                    <input id="author" name="option" type="radio" value="author" />
+                                                    <label for="author">Author</label>
+                                                    <span class="switch-button"></span>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control pull-left" onblur="if (this.value == '') {this.value = 'Search Library';}" name="q" placeholder="Search Library">
+                                <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button>
+
+                            </form>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="masthead">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h1>Book Library
+          <p class="lead"></p>
+        </h1>
+                </div>
+                <div class="col-md-5">
+
+                </div>
+            </div>
+        </div>
+        <!-- /cont -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                </div>
+            </div>
+        </div>
+        <!-- /cont -->
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-body">
+                        <!--/stories-->
+                        <!-- Elastislide Carousel -->
+
+                        <div id="rg-gallery" class="rg-gallery">
+                            <div class="rg-thumbs">
+                                <!-- Elastislide Carousel Thumbnail Viewer -->
+                                <div class="es-carousel-wrapper">
+                                    <div class="es-nav">
+                                        <span class="es-nav-prev">Previous</span>
+                                        <span class="es-nav-next">Next</span>
+                                    </div>
+                                    <div class="es-carousel">
+                                        <ul>
+                                            <%for(var i=books.length-1;i>=0;i--){%>
+                                                <li>
+                                                    <a href="/Books/<%=books[i]._id%>"><img src="<%=books[i].image_url%>" data-large="images/1.jpg" alt="<%=books[i].title%>" data-description="From off a hill whose concave womb reworded" /></a>
+                                                </li>
+                                                <%}%>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Elastislide Carousel Thumbnail Viewer -->
+                        </div>
+                        <!-- rg-thumbs -->
+                        <!-- End Elastislide Carousel -->
+                        <hr>
+                        <div class="row">
+                            <br>
+                            <div class="col-md-10 col-sm-9">
+                                <script>
+                                    <% if (temp == 1) { %>
+                                    swal("Thank You", " Your New Account has been created !", "success");
+                                    <%}%>
+                                </script>
+                                <%if(user.username!==undefined){%>
+
+                                    <hr>
+                                    <br>
+                                    <h1>You are logged in as <%=(user.username)%></h1>
+                                    <%}else{%>
+                                        <script>
+                                            swal({
+                                                title: 'Enter a username',
+                                                input: 'text',
+                                                showCancelButton: false,
+                                                confirmButtonText: 'Submit',
+                                                showLoaderOnConfirm: true,
+                                                background: '#fff url(http://cdn30.us1.fansshare.com/image/backgroundimage/tumblr-static-plain-background-plain-1713168784.jpg)',
+                                                allowOutsideClick: false,
+                                                preConfirm: function (text) {
+                                                    return new Promise(function (resolve, reject) {
+                                                        re = /^\w+$/;
+                                                        setTimeout(function () {
+                                                            if (text == "") {
+                                                                reject('Username cannot be empty!');
+                                                            } else if (!re.test(text)) {
+                                                                reject('Username must contain only letters, numbers and underscores!');
+                                                            } else {
+                                                                resolve();
+                                                            }
+                                                        }, 1000);
+                                                    });
+                                                },
+                                            }).then(function (text) {
+                                                console.log(text);
+                                                $.ajax({
+                                                    url: "/Auth/username?username=" + text,
+                                                    data: {
+                                                        username: text
+                                                    },
+                                                    type: "POST",
+                                                    dataType: 'json',
+                                                    statusCode: {
+                                                        404: function () {
+                                                            swal({
+                                                                title: "OOPS! Username already exists!",
+                                                                text: "Reloading the page",
+                                                                type: "error",
+                                                                background: '#fff url(http://cdn30.us1.fansshare.com/image/backgroundimage/tumblr-static-plain-background-plain-1713168784.jpg)',
+                                                                showCancelButton: true
+                                                            });
+                                                            window.setTimeout(function () {
+                                                                location.reload();
+                                                            }, 1000);
+                                                        },
+                                                        200: function () {
+                                                            swal({
+                                                                title: "Hurrah! Username " + text + " is created and registered",
+                                                                text: "Reloading the page",
+                                                                type: "success",
+                                                                background: '#fff url(http://cdn30.us1.fansshare.com/image/backgroundimage/tumblr-static-plain-background-plain-1713168784.jpg)',
+                                                                showCancelButton: false
+                                                            });
+                                                            window.setTimeout(function () {
+                                                                location.reload();
+                                                            }, 2000);
+                                                        }
+                                                    },
+                                                    success: function () {
+                                                        console.log('Success');
+                                                    },
+                                                    error: function (xhr, ajaxOptions, thrownError) {
+                                                        swal("Oops", "Something went wrong..Reloading the page", "error");
+                                                        window.setTimeout(function () {
+                                                            location.reload();
+                                                        }, 1000);
+                                                    }
+                                                });
+                                            });
+                                        </script>
+                                        <%}%>
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    <div class="clear"> </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <br>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <!--/stories-->
+                        <a href="/Auth/addBook" class="btn btn-primary pull-left btnNext">Add Books <i class="glyphicon glyphicon-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!--/col-12-->
+        </div>
+    </div>
+    <hr>
+    <div class="container" id="footer">
+        <div class="row">
+            <div class="col col-sm-12">
+                <h1>Follow Shubham</h1>
+                <div class="btn-group">
+                    <a class="btn btn-twitter btn-lg" href="https://twitter.com/imshubhamsingh_"><i class="icon-twitter icon-large"></i> Twitter</a>
+                    <a class="btn btn-facebook btn-lg" href="https://www.facebook.com/profile.php?id=100002311869554"><i class="icon-facebook icon-large"></i> Facebook</a>
+                    <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <hr>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <ul class="list-inline">
+                        <li><i class="icon-facebook icon-2x"></i></li>
+                        <li><i class="icon-twitter icon-2x"></i></li>
+                        <li><i class="icon-google-plus icon-2x"></i></li>
+                        <li><i class="icon-pinterest icon-2x"></i></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
+                    </div>
+                    <p class="pull-right">Shubham Singh<i class="icon-heart-empty"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

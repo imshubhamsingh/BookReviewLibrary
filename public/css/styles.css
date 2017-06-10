@@ -1,0 +1,1723 @@
+/* override bootstrap styles */
+
+@import url('http://fonts.googleapis.com/css?family=Oswald:300,400:latin,latin-ext');
+
+/*--ImageSlideShow--*/
+
+.rg-image-wrapper {
+    position: relative;
+    padding: 20px 30px;
+    background: transparent url(../images/black.png) repeat top left;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    min-height: 20px;
+}
+
+.rg-image {
+    position: relative;
+    text-align: center;
+    line-height: 0px;
+}
+
+.rg-image img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.rg-image-nav a {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: #000 url(../images/nav.png) no-repeat -20% 50%;
+    width: 28px;
+    height: 100%;
+    text-indent: -9000px;
+    cursor: pointer;
+    opacity: 0.3;
+    outline: none;
+    -moz-border-radius: 10px 0px 0px 10px;
+    -webkit-border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.rg-image-nav a.rg-image-nav-next {
+    right: 0px;
+    left: auto;
+    background-position: 115% 50%;
+    -moz-border-radius: 0px 10px 10px 0px;
+    -webkit-border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.rg-image-nav a:hover {
+    opacity: 0.8;
+}
+
+.rg-caption {
+    text-align: center;
+    margin-top: 15px;
+    position: relative;
+}
+
+.rg-caption p {
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-family: 'Trebuchet MS', 'Myriad Pro', Arial, sans-serif;
+    line-height: 16px;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+
+.rg-loading {
+    width: 46px;
+    height: 46px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #000 url(../images/ajax-loader.gif) no-repeat center center;
+    margin: -23px 0px 0px -23px;
+    z-index: 100;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    opacity: 0.7;
+}
+
+
+/*---endSlideShow--*/
+
+
+/*--Search--*/
+
+form.search-form {
+    width: 100%;
+    text-align: center;
+}
+
+input#s {
+    background: none repeat scroll 0 0 #ffffff;
+    border-radius: 5px 0 0 5px;
+    border-right: 2px solid #ddd;
+    border-width: 0 2px 0 0;
+    -webkit-box-shadow: -1px -4px 30px -1px rgba(0, 0, 0, 0.37);
+    -moz-box-shadow: -1px -4px 30px -1px rgba(0, 0, 0, 0.37);
+    box-shadow: -1px -4px 30px -1px rgba(0, 0, 0, 0.37);
+    color: #adadad;
+    float: left;
+    font-size: 20px;
+    font-weight: 500;
+    height: 60px;
+    margin: 0;
+    outline: medium none;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 83%;
+}
+
+input#buttonsinput {
+    border-radius: 0 5px 5px 0;
+    border-width: 0;
+    -webkit-box-shadow: -1px -4px 30px -1px rgba(0, 0, 0, 0.37);
+    -moz-box-shadow: -1px -4px 30px -1px rgba(0, 0, 0, 0.37);
+    box-shadow: -1px -4px 30px -1px rgba(0, 0, 0, 0.37);
+    color: #fff;
+    float: left;
+    font-family: 'Oswald', arial narrow, sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    height: 60px;
+    outline: medium none;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-transform: uppercase;
+    width: 15%;
+}
+
+input#buttonsinput {
+    background-color: rgb(17, 17, 102);
+}
+
+input#buttonsinput:hover {
+    cursor: pointer;
+}
+
+form.search-form {
+    text-align: center;
+    width: 100%;
+}
+
+@media only screen {
+    .toggle {
+        color: #fff;
+        display: block;
+        font-family: sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        width: 200px;
+    }
+    .toggle label {
+        display: block;
+        padding: 3px 0;
+        position: relative;
+        width: 100%;
+        z-index: 3;
+    }
+    .toggle input {
+        opacity: 0;
+        position: absolute;
+        z-index: 5;
+    }
+    .toggle input:focus ~ .toggle-button {
+        outline: 1px dotted #6B6B6B;
+    }
+    .switch {
+        border: 0;
+        color: #fff;
+        font-family: sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 0;
+        position: relative;
+        width: 270px;
+    }
+    .switch legend {
+        color: #6B6B6B;
+        display: block;
+        float: left;
+        font-size: 12px;
+        line-height: 15px;
+        padding: 7px 10% 3px 0;
+        text-align: right;
+        width: 40%;
+    }
+    .switch input {
+        opacity: 0;
+        position: absolute;
+    }
+    .switch legend:after {
+        border-radius: 3px;
+        content: '';
+        height: 100%;
+        left: 50%;
+        padding: 2px;
+        position: absolute;
+        top: 0;
+        width: 50%;
+        z-index: 0;
+    }
+    .switch label {
+        color: #DEDEDE;
+        cursor: pointer;
+        float: left;
+        margin-top: 2px;
+        padding: 5px 0 3px 0;
+        position: relative;
+        text-align: center;
+        width: 25%;
+        z-index: 2;
+    }
+    .switch input:checked + label {
+        color: #6B6B6B;
+        -moz-transition: all 0.4s ease-in 0s;
+        -o-transition: all 0.4s ease-in 0s;
+        transition: all 0.4s ease-in 0s;
+        -webkit-transition: all 0.4s ease-in 0s;
+    }
+    .switch input:focus + label {
+        background-color: #EDEDED;
+        -moz-transition: all 0.4s ease-in 0s;
+        -o-transition: all 0.4s ease-in 0s;
+        transition: all 0.4s ease-in 0s;
+        -webkit-transition: all 0.4s ease-in 0s;
+    }
+    .switch .switch-button {
+        border-bottom: solid 1px #6B6B6B;
+        clear: both;
+        height: 100%;
+        left: 50%;
+        margin: 2px;
+        -moz-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        position: absolute;
+        top: 0;
+        transition: all 0.3s ease-out;
+        -webkit-transition: all 0.3s ease-out;
+        z-index: 1;
+    }
+    .switch input:last-of-type:checked ~ .switch-button {
+        left: 75%;
+    }
+    .switch.switch-two label {
+        width: 16.6%;
+    }
+    .switch.switch-two .switch-button {
+        width: 16%;
+    }
+    .switch.switch-two input:checked:first-of-type ~ .switch-button {
+        left: 39.6%;
+    }
+    .switch.switch-two input:checked:last-of-type ~ .switch-button {
+        left: 56.26%;
+    }
+    .switch.switch-three label {
+        width: 16.6%;
+    }
+    .switch.switch-three .switch-button {
+        width: 16%;
+    }
+    .switch.switch-three input:checked:nth-of-type(2) ~ .switch-button {
+        left: 66.6%;
+    }
+    .switch.switch-three input:checked:last-of-type ~ .switch-button {
+        left: 83.26%;
+    }
+    .switch.fcRed .switch-button {
+        border-bottom: solid 1px red;
+    }
+    .switch.fcRed input:checked + label {
+        color: red;
+    }
+    ;
+}
+
+.spaceEmOut {
+    margin-bottom: 15px;
+}
+
+.row.pad-btm-40 {
+    margin-left: 0px;
+}
+
+
+/*--meadia quiries start here--*/
+
+@media(max-width:1440px) {}
+
+@media(max-width:1366px) {}
+
+@media(max-width:1280px) {
+    input#s {
+        width: 85%;
+    }
+    input#buttonsinput {
+        width: 15%;
+        font-size: 20px;
+    }
+}
+
+@media(max-width:1024px) {
+    input#s {
+        width: 84%;
+    }
+    input#buttonsinput {
+        width: 15%;
+        font-size: 20px;
+    }
+}
+
+@media(max-width:768px) {
+    input#s {
+        width: 84%;
+        height: 50px;
+        font-size: 16px;
+    }
+    input#buttonsinput {
+        width: 16%;
+        font-size: 20px;
+        height: 50px;
+    }
+}
+
+@media(max-width:667px) {
+    input#s {
+        width: 70%;
+        height: 47px;
+        font-size: 15px;
+    }
+    input#buttonsinput {
+        width: 28%;
+        font-size: 16px;
+        text-align: center;
+        height: 47px;
+        font-weight: 400;
+    }
+}
+
+@media(max-width:640px) {
+    input#s {
+        width: 82%;
+        height: 47px;
+        font-size: 15px;
+    }
+    input#buttonsinput {
+        width: 18%;
+        font-size: 16px;
+        text-align: center;
+        height: 47px;
+        font-weight: 400;
+    }
+}
+
+
+}
+@media(max-width:600px) {
+    input#s {
+        width: 82%;
+        height: 47px;
+        font-size: 15px;
+    }
+    
+    input#buttonsinput {
+        width: 18%;
+        font-size: 16px;
+        text-align: center;
+        height: 47px;
+        font-weight: 400;
+    }
+}
+@media(max-width:568px) {
+    input#s {
+        width: 75%;
+        height: 47px;
+        font-size: 14px;
+    }
+    
+    input#buttonsinput {
+        width: 24%;
+        font-size: 15px;
+        text-align: center;
+        height: 47px;
+        font-weight: 400;
+    }
+}
+@media(max-width:480px) {
+    input#s {
+        width: 82%;
+        height: 47px;
+        font-size: 15px;
+    }
+    
+    input#buttonsinput {
+        width: 18%;
+        font-size: 16px;
+        text-align: center;
+        height: 47px;
+        font-weight: 400;
+    }
+}
+@media(max-width:433px) {
+    input#s {
+        width: 73%;
+        height: 47px;
+        font-size: 13px;
+    }
+    
+    input#buttonsinput {
+        width: 26%;
+        font-size: 15px;
+        text-align: center;
+        height: 47px;
+        font-weight: 400;
+    }
+}
+@media(max-width:452px) {
+    input#s {
+        width: 74%;
+        height: 47px;
+        font-size: 13px;
+    }
+    
+    input#buttonsinput {
+        width: 26%;
+        font-size: 15px;
+        text-align: center;
+        height: 47px;
+        font-weight: 400;
+    }
+}
+@media(max-width:375px) {
+    input#s {
+        width: 74%;
+        height: 47px;
+        font-size: 12px;
+    }
+    
+    input#buttonsinput {
+        width: 26%;
+        font-size: 14px;
+        text-align: center;
+        height: 47px;
+        font-weight: 400;
+    }
+}
+@media(max-width:320px) {
+    input#s {
+        width: 70%;
+        height: 47px;
+        font-size: 10px;
+    }
+    
+    input#buttonsinput {
+        width: 26%;
+        font-size: 12px;
+        text-align: center;
+        height: 47px;
+        font-weight: 400;
+    }
+}
+
+/*--end Search --*/
+
+/*--Loader --*/
+.no-js #loader {
+    display: none;
+}
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(../images/loader-64x/Preloader_3.gif) center no-repeat #fff;
+}
+
+/*--LocderEnd --*/
+
+/*--Login and SignUp Style CSS
+--*/
+
+/* reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+nav ul,
+nav li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+ol,
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* start editing from here */
+a {
+    text-decoration: none;
+}
+.txt-rt {
+    text-align: right;
+}
+
+/* text align right */
+.txt-lt {
+    text-align: left;
+}
+
+/* text align left */
+.txt-center {
+    text-align: center;
+}
+
+/* text align center */
+.float-rt {
+    float: right;
+}
+
+/* float right */
+.float-lt {
+    float: left;
+}
+
+/* float left */
+.clear {
+    clear: both;
+}
+
+/* clear float */
+.pos-relative {
+    position: relative;
+}
+
+/* Position Relative */
+.pos-absolute {
+    position: absolute;
+}
+
+/* Position Absolute */
+.vertical-base {
+    vertical-align: baseline;
+}
+
+/* vertical align baseline */
+.vertical-top {
+    vertical-align: top;
+}
+
+/* vertical align top */
+nav.vertical ul li {
+    display: block;
+}
+
+/* vertical menu */
+nav.horizontal ul li {
+    display: inline-block;
+}
+
+/* horizontal menu */
+img {
+    max-width: 100%;
+}
+.forgotpass a {
+    transition: color .4s;
+    color: #265C83;
+}
+.forgotpass a:link {
+    color: #265C83;
+}
+.forgotpass a:visited {
+    color: #265C83;
+}
+.forgotpass a:hover {
+    color: #7FDBFF;
+}
+.forgotpass a:active {
+    transition: color .3s;
+    color: #007BE6;
+}
+
+/*end reset*/
+
+/****-----start-body----****/
+body {
+    background: #eee;
+    font-family: 'Open Sans', sans-serif;
+}
+.main {
+    margin: 7em auto 0;
+    width: 80%;
+    background: #fff;
+}
+.header {
+    text-align: center;
+    padding: 1.3em;
+}
+.header h1 {
+    color: #272727;
+    font-weight: 700;
+    font-size: 22px;
+}
+.main p {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #383737;
+    padding: 20px 30px;
+    border-bottom: 1px solid #E7E0E0;
+    margin-top: -13px;
+}
+.main h2,
+.main h3 {
+    text-align: left;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 15px 3px;
+    color: #3F3D3D;
+}
+.left-form,
+.right-form {
+    float: left;
+    margin: 22px 28px;
+    width: 40%;
+}
+.forgot-pass-form {
+    float: left;
+    margin: 22px 28px;
+    width: 93%;
+}
+.left-form input[type=text],
+.left-form input[type=email],
+.left-form input[type=password] {
+    float: left;
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    padding: 0.7em 2em 0.7em 1em;
+    border: none;
+    color: #000;
+    font-size: 15px;
+    float: left;
+    outline: none;
+}
+.right-form {
+    float: right;
+}
+form {
+    padding-bottom: 2em;
+}
+.right-form li {
+    display: block;
+    color: #4D4949;
+    border: 1px solid #EBEBEB;
+    border-radius: 0.3em;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    margin-bottom: 10px;
+}
+.forgot-pass-form li {
+    display: block;
+    color: #4D4949;
+    border: 1px solid #EBEBEB;
+    border-radius: 0.3em;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    margin-bottom: 10px;
+}
+.forgot-pass-form input[type=text],
+input[type=password] {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    padding: 0.7em 1em 0.7em 1em;
+    color: #000;
+    font-size: 15px;
+    border: none;
+    outline: none;
+}
+.right-form input[type=text] {
+    font-family: 'Open Sans', sans-serif;
+    width: 76%;
+    padding: 0.7em 1em 0.7em 1em;
+    color: #000;
+    font-size: 15px;
+    border: none;
+    outline: none;
+}
+.right-form select {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    padding: 0.7em 1em 0.7em 1em;
+    color: #000;
+    font-size: 15px;
+    border: none;
+    outline: none;
+}
+.right-form input[type=password] {
+    font-family: 'Open Sans', sans-serif;
+    width: 76%;
+    padding: 0.7em 1em 0.7em 1em;
+    color: #000;
+    font-size: 15px;
+    border: none;
+    outline: none;
+}
+.left-form li {
+    display: block;
+    color: #4D4949;
+    border: 1px solid #EBEBEB;
+    border-radius: 0.3em;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    margin-bottom: 10px;
+}
+.show {
+    height: 28px;
+    width: 48px;
+    display: block;
+    float: right;
+    margin: 5px 9px 9px 0px;
+}
+.left-form submit {
+    float: left;
+}
+.right-form,
+.forgot-pass-form submit {
+    float: right;
+}
+.main h4 {
+    float: left;
+    font-size: 13px;
+    font-weight: 600;
+    color: #363535;
+}
+.left-form input[type=submit] {
+    padding: 10px 19px;
+    border-radius: 0.3em;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    color: #4D4949;
+    background: #F3F3F3;
+    border: 1px solid #EBEBEB;
+    font-weight: bold;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.right-form input[type="button"] {
+    padding: 10.5px 19px;
+    border-radius: 0em 0.3em 0.3em 0em;
+    -webkit-border-radius: 0em 0.3em 0.3em 0em;
+    -moz-border-radius: 0em 0.3em 0.3em 0em;
+    -o-border-radius: 0em 0.3em 0.3em 0em;
+    color: #4D4949;
+    background: #F3F3F3;
+    border: 1px solid #EBEBEB;
+    font-weight: bold;
+    font-size: 14px;
+    outline: none;
+    float: right;
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    cursor: pointer;
+}
+.forgot-pass-form input[type=submit] {
+    float: right;
+    padding: 8px 19px;
+    border-radius: 0.3em;
+    border: none;
+    outline: none;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    font-weight: bold;
+    font-size: 15px;
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    margin: 2em;
+    cursor: pointer;
+}
+.right-form input[type=submit] {
+    float: left;
+    padding: 8px 19px;
+    border-radius: 0.3em;
+    border: none;
+    outline: none;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    font-weight: bold;
+    font-size: 15px;
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    margin: 2em -9em;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background: #2E2D2D;
+    color: #fff;
+}
+
+/*---start-check-box----*/
+.uncheked {
+    height: 40px;
+    width: 28px;
+    display: block;
+    background: url(../images/check-icon.png) no-repeat;
+}
+.price-selection-tree input[type="checkbox"]+label {
+    float: left;
+    display: block;
+    vertical-align: top;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: -0.3em;
+    height: 76px;
+    cursor: pointer;
+}
+.checkbox-grid-left p {
+    display: block;
+}
+.left-form > label {
+    font-size: 13px;
+    float: left;
+    vertical-align: super;
+    margin-left: 10px;
+    color: #4C4A4A;
+    margin-top: 2px;
+    font-weight: 600;
+}
+input[type=checkbox].css-checkbox10 + label i.css-label10 {
+    float: left;
+    height: 40px;
+    width: 28px;
+    display: inline-block;
+    line-height: 18px;
+    background-repeat: no-repeat;
+    background-position: 0 0px;
+    cursor: pointer;
+    background: url(../images/check-icon.png) no-repeat -0px -82px;
+}
+input[type=checkbox].css-checkbox10:checked + label i.css-label10 {
+    background: url(../images/check-icon.png) no-repeat -0px -82px;
+    height: 20px;
+}
+
+/*----*/
+
+/**start-copy-right**/
+.copy-right {
+    text-align: center;
+}
+.copy-right p {
+    color: rgb(119, 119, 119);
+    font-size: 1em;
+    margin-top: 5em;
+    font-weight: 600;
+}
+.copy-right p a {
+    font-size: 1em;
+    font-weight: 600;
+    color: #669A16;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.copy-right a:hover {
+    color: #000;
+}
+
+/**/
+/end-copy-right**/
+/*----start-responsive design-----*/
+@media only screen and (max-width:1680px) and (min-width:1440px) {
+    .main {
+        width: 70%;
+        margin: 0em auto 0;
+    }
+    
+    .copy-right p {
+        margin: 3.5em 0em;
+    }
+}
+@media only screen and (max-width:1440px) and (min-width:1366px) {
+    .main {
+        width: 80%;
+        margin: 0em auto 0;
+    }
+    
+    .copy-right p {
+        margin: 3.8em 0em;
+    }
+}
+@media only screen and (max-width:1366px) and (min-width:1280px) {
+    .main {
+        width: 82%;
+        margin: 0em auto 0;
+    }
+    
+    .copy-right p {
+        margin: 4em 0em;
+    }
+}
+@media only screen and (max-width:1280px) and (min-width:1024px) {
+    .main {
+        width: 89%;
+        margin: 0em auto 0;
+    }
+    
+    .copy-right p {
+        margin: 3.5em 0em;
+    }
+    
+    .right-form input[type=password] {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.7em 1em 0.7em 1em;
+        width: 74%;
+    }
+}
+@media only screen and (max-width:1024px) and (min-width:768px) {
+    .main {
+        width: 97%;
+        margin: 0em auto 0;
+    }
+    
+    .left-form input[type=text],
+    .left-form input[type=email],
+    .left-form input[type=password] {
+        font-family: 'Open Sans', sans-serif;
+        width: 100%;
+    }
+    
+    .forgot-pass-form input[type=text],
+    .forgot-pass-form input[type=email],
+    .forgot-pass-form input[type=password] {
+        font-family: 'Open Sans', sans-serif;
+        width: 100%;
+    }
+    
+    .right-form input[type=text] {
+        font-family: 'Open Sans', sans-serif;
+        width: 70%;
+    }
+    
+    .right-form select {
+        font-family: 'Open Sans', sans-serif;
+        width: 100%;
+    }
+    
+    .right-form input[type=password] {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.7em 1em 0.7em 1em;
+        width: 70%;
+    }
+    
+    .copy-right p {
+        margin: 3.5em 0em;
+    }
+}
+@media only screen and (max-width:768px) and (min-width:640px) {
+    .main {
+        width: 95%;
+        margin: 0em auto 0;
+    }
+    
+    .left-form input[type=text],
+    .left-form input[type=email],
+    .left-form input[type=password] {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.7em 1em 0.7em 1em;
+        width: 100%;
+    }
+    
+    .forgot-pass-form input[type=text],
+    .forgot-pass-form input[type=email],
+    .forgot-pass-form input[type=password] {
+        font-family: 'Open Sans', sans-serif;
+        width: 100%;
+    }
+    
+    #userpass {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.7em 1em 0.7em 1em;
+        width: 84.5%;
+    }
+    
+    .right-form input[type=text],
+    select {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.7em 1em 0.7em 1em;
+        width: 100%;
+        text-align: left;
+    }
+    
+    .right-form input[type=password] {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.7em 1em 0.7em 1em;
+        width: 84%;
+    }
+    
+    .left-form {
+        width: 88%;
+        text-align: center;
+    }
+    
+    .right-form {
+        float: none;
+        width: 88%;
+        text-align: center;
+    }
+    
+    .left-form > label {
+        margin-left: 42px;
+        margin-top: 13px;
+    }
+    
+    .main h2,
+    .main h3 {
+        text-align: center;
+    }
+    
+    .left-form li {
+        margin-left: 32px;
+    }
+    
+    .right-form li {
+        margin-left: 40px;
+        margin-top: 10px;
+    }
+    
+    .left-form input[type=submit] {
+        padding: 12px 12px;
+        float: right;
+        margin: 2px 0px;
+    }
+    
+    .main h4 {
+        float: left;
+        margin: 7px 36px;
+    }
+    
+    .main h3 {
+        margin-top: -2em;
+    }
+    
+    .right-form input[type=submit],
+    .forgot-pass-form input[type=submit] {
+        float: right;
+        padding: 8px 19px;
+        margin: 2px 3px;
+    }
+    
+    .copy-right p {
+        margin: 3.5em 0em;
+    }
+}
+@media only screen and (max-width:640px) and (min-width:480px) {
+    .main {
+        width: 95%;
+        margin: 0em auto 0;
+    }
+    
+    .left-form input[type=text],
+    .left-form input[type=email],
+    .left-form input[type=password] {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.7em 1em 0.7em 1em;
+        width: 100%;
+    }
+    
+    .forgot-pass-form input[type=text],
+    .forgot-pass-form input[type=email],
+    .forgot-pass-form input[type=password] {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.7em 1em 0.7em 1em;
+        width: 100%;
+    }
+    
+    .right-form input[type=text],
+    select {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.7em 1em 0.7em 1em;
+        width: 100%;
+    }
+    
+    #userpass {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.7em 1em 0.7em 1em;
+        width: 79.1%;
+    }
+    
+    .right-form input[type=password] {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.7em 1em 0.7em 1em;
+        width: 81%;
+    }
+    
+    .left-form {
+        width: 88%;
+        text-align: center;
+    }
+    
+    .right-form {
+        float: none;
+        width: 88%;
+        text-align: center;
+    }
+    
+    .left-form > label {
+        margin-left: 42px;
+        margin-top: 13px;
+    }
+    
+    .main h2,
+    .main h3 {
+        text-align: center;
+    }
+    
+    .left-form li {
+        margin-left: 16px;
+    }
+    
+    .right-form li {
+        margin-left: 16px;
+        margin-top: 10px;
+    }
+    
+    .left-form input[type=submit] {
+        padding: 12px 12px;
+        text-align: center;
+        float: none;
+    }
+    
+    .main h4 {
+        float: left;
+        margin: 7px 17px;
+    }
+    
+    .right-form input[type=submit],
+    .forgot-pass-form input[type=submit] {
+        float: right;
+        padding: 8px 19px;
+        margin: 2px 3px;
+    }
+    
+    .copy-right p {
+        margin: 3.5em 0em;
+    }
+}
+@media only screen and (max-width:480px) and (min-width:320px) {
+    form {
+        padding-bottom: 0em;
+    }
+    
+    .main {
+        width: 95%;
+        margin: 0em auto 0;
+    }
+    
+    .main p {
+        padding: 16px 20px;
+    }
+    
+    .left-form input[type=text],
+    .left-form input[type=email],
+    .left-form input[type=password] {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.7em 1em 0.7em 1em;
+        width: 100%;
+    }
+    
+    .forgot-pass-form input[type=text],
+    .forgot-pass-form input[type=email],
+    .forgot-pass-form input[type=password] {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.7em 1em 0.7em 1em;
+        width: 100%;
+    }
+    
+    .right-form input[type=text],
+    select {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.7em 2em 0.7em 1em;
+        width: 100%;
+    }
+    
+    #userpass {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.7em 1em 0.7em 1em;
+        width: 60%;
+    }
+    
+    .right-form input[type=password] {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.7em 2em 0.7em 1em;
+        width: 66%;
+    }
+    
+    #change {
+        text-align: center;
+        float: right
+    }
+    
+    .left-form,
+    .right-form {
+        width: 83%;
+        float: none;
+        text-align: center;
+    }
+    
+    .left-form > label {
+        margin-left: 10px;
+        margin-top: 13px;
+    }
+    
+    .main h2,
+    .main h3 {
+        text-align: center;
+    }
+    
+    .left-form li {
+        margin-left: 13px;
+    }
+    
+    .right-form li {
+        margin-left: 16px;
+        margin-top: 25px;
+    }
+    
+    .left-form input[type=submit] {
+        padding: 12px 12px;
+        text-align: center;
+        margin: 9px 0px;
+    }
+    
+    .main h4 {
+        float: left;
+        margin: 7px 17px;
+    }
+    
+    .right-form input[type=submit],
+    .forgot-pass-form input[type=submit] {
+        float: right;
+        padding: 11px 19px;
+        margin: 2px 3px;
+    }
+    
+    .copy-right p {
+        margin: 3em 0em;
+    }
+}
+@media only screen and (max-width:320px) and (min-width:240px) {
+    form {
+        padding-bottom: 0em;
+    }
+    
+    .main {
+        width: 96%;
+        margin: 0em auto 0;
+    }
+    
+    .main p {
+        padding: 16px 17px;
+    }
+    
+    .left-form input[type=text],
+    .left-form input[type=email],
+    .left-form input[type=password] {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.4em 1em 0.4em 1em;
+        width: 100%;
+    }
+    
+    .forgot-pass-form input[type=text],
+    .forgot-pass-form input[type=email],
+    .forgot-pass-form input[type=password] {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.4em 1em 0.4em 1em;
+        width: 100%;
+    }
+    
+    .right-form input[type=text],
+    select {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.6em 0.9em 0.6em 1em;
+        width: 100%;
+    }
+    
+    #userpass {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.7em 1em 0.7em 1em;
+        width: 61.5%;
+    }
+    
+    .right-form input[type=password] {
+        font-family: 'Open Sans', sans-serif;
+        padding: 0.6em 0.9em 0.6em 1em;
+        width: 69%;
+    }
+    
+    .left-form,
+    .right-form {
+        text-align: center;
+    }
+    
+    .left-form > label {
+        margin-left: 10px;
+        margin-top: 13px;
+    }
+    
+    .main h2,
+    .main h3 {
+        text-align: center;
+    }
+    
+    .left-form li {
+        margin-left: -6px;
+    }
+    
+    .right-form li {
+        margin-left: -5px;
+    }
+    
+    .left-form input[type=submit] {
+        padding: 12px 12px;
+        text-align: center;
+        margin: 9px 0px;
+    }
+    
+    .main h4 {
+        float: left;
+        margin: 7px 17px;
+    }
+    
+    .right-form input[type=submit],
+    .forgot-pass-form input[type=submit] {
+        float: right;
+        padding: 8px 19px;
+        margin: 2px 3px;
+    }
+    
+    .copy-right p {
+        margin: 2.5em 0em;
+    }
+    
+    .show {
+        margin: 1px 5px 9px 0px;
+    }
+}
+
+/*----//end-responsive design-----*/
+
+/* Story Template Style CSS*/
+.dropdown .dropdown-menu {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+}
+.dropdown.open .dropdown-menu {
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    max-height: 300px;
+    opacity: 1;
+}
+.navbar-form input,
+.form-inline input {
+    width: auto;
+}
+body {
+    padding-top: 50px;
+    color: #646464;
+    background-color: #efefef;
+}
+h1,
+h2,
+h3,
+.highlight,
+.navbar a,
+#masthead h4 {
+    font-family: 'Oswald', arial narrow, sans-serif;
+}
+footer {
+    margin-top: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #cecece;
+}
+#masthead {
+    min-height: 99px;
+    background-color: #000044;
+    color: #aaaacc;
+}
+#masthead h1 {
+    font-size: 55px;
+    line-height: 1;
+    color: #fefeff;
+    margin-top: 50px;
+}
+#masthead .well {
+    margin-top: 31px;
+    background-color: #111166;
+    border-color: #000022;
+    color: #efefff;
+    min-height: 127px;
+}
+#topPanel {
+    padding-top: 0px;
+    padding-left: 22px;
+    padding-right: 22px;
+}
+#topPanel .panel-body {
+    padding-top: 0px;
+}
+.navbar.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.top-spacer {
+    background-color: #ffffff;
+    height: 40px;
+}
+a,
+a:hover {
+    color: #223344;
+    text-decoration: none;
+}
+.icon-bar {
+    background-color: #fff;
+}
+@media screen and (min-width: 768px) {
+    #masthead h1 {
+        font-size: 80px;
+    }
+}
+.navbar-bright {
+    background-color: #111166;
+    color: #fff;
+    margin-bottom: 0;
+    border-width: 0;
+}
+.navbar-bright a,
+.navbar-bright .navbar-brand,
+#masthead h4 {
+    color: #ccccdd;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+.navbar-logout {
+    color: #ccccdd;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+.navbar-bright li > a:hover {
+    background-color: #000044;
+}
+.dropdown-menu {
+    min-width: 250px;
+}
+.caret {
+    color: #fff;
+}
+.navbar-toggle {
+    color: #fff;
+    border-width: 0;
+}
+.navbar-toggle:hover {
+    background-color: #fff;
+}
+.panel {
+    border-color: transparent;
+    border-radius: 0;
+}
+.thumbnail {
+    margin-bottom: 8px;
+}
+.img-container {
+    overflow: hidden;
+    height: 170px;
+}
+.img-container img {
+    min-width: 280px;
+    min-height: 180px;
+    max-width: 380px;
+    max-height: 280px;
+}
+.txt-container {
+    overflow: hidden;
+    height: 100px;
+}
+.panel .lead {
+    overflow: hidden;
+    height: 90px;
+}
+.label-float {
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    opacity: .9;
+    padding: 6px;
+    color: #fff;
+}
+.btn-twitter {
+    background-color: #4099FF;
+    color: #fff;
+    width: 28%;
+}
+.btn-facebook {
+    background-color: #3B5998;
+    color: #fff;
+    width: 38%
+}
+.btn-google-plus {
+    background-color: #d34836;
+    color: #fff;
+    width: 33%
+}
+.btn-twitter:hover {
+    background-color: #3088FF;
+    color: #62BBFF;
+}
+.btn-facebook:hover {
+    background-color: #2A4998;
+    color: #4C6BBA;
+}
+.btn-google-plus:hover {
+    background-color: #C23836;
+    color: #E45A58;
+}
+@media only screen and (max-width:444px) and (min-width:339px) {
+    .login-btn1 {
+        width: 28%;
+        font-size: 13px;
+    }
+    
+    .login-btn2 {
+        width: 37%;
+        font-size: 13px;
+    }
+    
+    .login-btn3 {
+        width: 32%;
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width:339px) and (min-width:320px) {
+    .login-btn1 {
+        width: 30%;
+        font-size: 12px;
+        padding: .93em
+    }
+    
+    .login-btn2 {
+        width: 38%;
+        font-size: 12px;
+        padding: .93em
+    }
+    
+    .login-btn3 {
+        width: 32%;
+        font-size: 12px;
+        padding: .93em
+    }
+}

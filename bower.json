@@ -1,0 +1,44 @@
+{
+    "name": "library",
+    "description": "Building Website using NodeJs and Express",
+    "authors": [
+    "Shubham Singh"
+  ],
+    "license": "ISC",
+    "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+    "dependencies": {
+        "bootstrap": "~3.3.5",
+        "font-awesome": "~4.4.0",
+        "jquery": "~2.2.4",
+        "sweetalert2": "^4.0.11",
+        "modernizr": "^3.3.1"
+
+    },
+    "overrides": {
+        "bootstrap": {
+            "main": [
+        "dist/js/bootstrap.js",
+        "dist/css/bootstrap.min.css",
+        "less/bootstrap.less"
+      ]
+        },
+        "modernizr": {
+            "main": [
+        "src/Modernizr.js"
+      ]
+        },
+        "font-awesome": {
+            "main": [
+        "less/font-awesome.less",
+        "css/font-awesome.min.css",
+        "scss/font-awesome.scss"
+      ]
+        }
+    }
+}

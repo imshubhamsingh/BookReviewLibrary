@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Library</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/lib/sweetalert2/dist/sweetalert2.css" />
+    <!-- endbower -->
+    <!-- inject:css -->
+
+    <link rel="stylesheet" href="/css/elastislide.css">
+
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- endinject -->
+    <!-- bower:js -->
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/lib/es6-promise/promise.js"></script>
+    <script src="/lib/sweetalert2/dist/sweetalert2.js"></script>
+    <script src="/lib/modernizr/src/Modernizr.js"></script>
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="/js/checkForm.js"></script>
+    <script src="/js/gallery.js"></script>
+    <script src="/js/jquery.elastislide.js"></script>
+    <script src="/js/jquery.tmpl.min.js"></script>
+    <!-- endinject -->
+    <!-- inline scripts --->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript">
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <script>
+        <% if (username == 0||invalid ==0) {%>
+        $(window).load(function () {
+            // Animate loader off screen
+            setTimeout(function () {
+                $(".se-pre-con").fadeOut("slow");
+            }, 500);
+
+        });
+        <%}else{%>
+        $(window).load(function () {
+            // Animate loader off screen
+            setTimeout(function () {
+                $(".se-pre-con").fadeOut("slow");
+            }, 2500);
+        });
+        <%}%>
+    </script>
+
+    <script>
+        function show() {
+            var p = document.getElementById('userpass');
+            var p1 = document.getElementById('change');
+            p.setAttribute('type', 'text');
+            p1.setAttribute('value', 'Hide');
+        }
+
+        function hide() {
+            var p = document.getElementById('userpass');
+            var p1 = document.getElementById('change');
+            p.setAttribute('type', 'password');
+            p1.setAttribute('value', 'Show');
+        }
+
+        var pwShown = 0;
+
+        function changepass() {
+            if (pwShown == 0) {
+                pwShown = 1;
+                show();
+            } else {
+                pwShown = 0;
+                hide();
+            }
+        }
+
+        function showhide() {
+            var p = document.getElementById('userpass');
+            var p1 = document.getElementById('change');
+            if (p.value !== "") {
+                p1.style.visibility = "visible";
+            } else {
+                p1.style.visibility = "hidden";
+            }
+        }
+    </script>
+    <script>
+        function forgotPassword() {
+            swal({
+                title: 'Can\'t sign in ? Forget your password ? Enter you email below and we\'ll send you password reset instructions',
+                input: 'email',
+                showCancelButton: true,
+                confirmButtonText: 'Submit',
+                showLoaderOnConfirm: true,
+                background: '#fff url(http://cdn30.us1.fansshare.com/image/backgroundimage/tumblr-static-plain-background-plain-1713168784.jpg)',
+                allowOutsideClick: false,
+                preConfirm: function (email) {
+                    return new Promise(function (resolve, reject) {
+                        setTimeout(function () {
+                            if (email == "") {
+                                reject('Email Invalid');
+                            } else {
+                                resolve();
+                            }
+                        }, 2000);
+
+                    });
+                },
+            }).then(function (email) {
+                console.log(email);
+                $.ajax({
+                    url: "/ForgotPassword/sentMail?email=" + email,
+                    data: {
+                        email: email
+                    },
+                    type: "POST",
+                    dataType: 'json',
+                    statusCode: {
+                        404: function () {
+                            swal({
+                                title: "OOPS! Email is not registered !",
+                                type: "error",
+                                background: '#fff url(http://cdn30.us1.fansshare.com/image/backgroundimage/tumblr-static-plain-background-plain-1713168784.jpg)',
+                                showCancelButton: true
+                            });
+                        },
+                        200: function () {
+                            swal({
+                                title: "Hurrah! An email has been sent to " + email + " with further instruction",
+                                type: "success",
+                                background: '#fff url(http://cdn30.us1.fansshare.com/image/backgroundimage/tumblr-static-plain-background-plain-1713168784.jpg)',
+                                showCancelButton: false
+                            });
+                        }
+                    },
+                    success: function () {},
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        console.log(xhr);
+                        console.log(ajaxOptions);
+                        console.log(thrownError);
+                        swal("Oops", "Something went wrong...Reloading the page", "error");
+
+
+                    }
+                });
+            });
+
+        }
+    </script>
+
+
+    <!-- endinlinescript -->
+
+    <!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '845305342268635',
+                xfbml: true,
+                version: 'v2.7'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div class="se-pre-con"></div>
+    <header class="navbar navbar-bright navbar-fixed-top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">Home</a>
+            </div>
+            <nav class="collapse navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav">
+                    <% for(var i=0 ;i<nav.length;i++){%>
+                        <li>
+                            <a href="<%=nav[i].Link%>">
+                                <%=nav[i].Text%>
+                            </a>
+                        </li>
+                        <%}%>
+                </ul>
+                <ul class="nav navbar-right navbar-nav">
+                    <li>
+                        <a href="<%=status.Link%>">
+                            <%=status.Text%>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="/Search" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+                        <ul class="dropdown-menu" style="padding:12px; background:white">
+                            <form class="form-inline" action="/Search">
+                                <div class="container">
+                                    <div class="row pad-btm-40">
+                                        <div class="span16">
+                                            <div class="spaceEmOut">
+                                                <fieldset class="switch switch-two">
+                                                    <legend>Search</legend>
+                                                    <input id="title" name="option" type="radio" value="title" checked />
+                                                    <label for="title">Title</label>
+                                                    <input id="author" name="option" type="radio" value="author" />
+                                                    <label for="author">Author</label>
+                                                    <span class="switch-button"></span>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control pull-left" onblur="if (this.value == '') {this.value = 'Search Library';}" name="q" placeholder="Search Library" required>
+                                <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button>
+
+                            </form>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-body">
+                        <!--/stories-->
+                        <div class="main">
+                            <div class="header">
+                                <script>
+                                    <% if (username == 0) {%>
+                                    swal("Oops!", "Username not available");
+                                    <%}%>
+                                    <% if (invalid == 0) {%>
+                                    swal("Oops!", "Invalid Username or password");
+                                    <%}%>
+                                </script>
+                                <script>
+                                    <% if (reset ==='success') {%>
+                                    swal('Hurrah!',
+                                        'Your password has been changed!',
+                                        'success');
+                                    <%}%>
+                                    <% if (reset ==='failure') {%>
+
+                                    <%}%>
+                                </script>
+                                <h1>Login or Create a Free Account!</h1>
+                            </div>
+                            <p>Welcome to my first Web App made using NodeJs and Express</p>
+                            <form name="signUpForm" id="signUp" action="/Auth/signUp" method="post" onsubmit="return checkingNewAccountDetails(this);">
+                                <ul class="left-form" style="list-style-type:none">
+                                    <h2>New Account:</h2>
+                                    <li>
+                                        <input title="Enter your username" type="text" placeholder="Username" name="userName" autocomplete="off" required/>
+                                        <div class="clear"></div>
+                                    </li>
+                                    <li>
+                                        <input title="Enter your Email" type="text" placeholder="Email" name="email" autocomplete="off" required/>
+                                        <div class="clear"> </div>
+                                    </li>
+                                    <li>
+                                        <input title="Password must contain at least 6 characters, including UPPER/lowercase and numbers" type="password" placeholder="Password" name="password1" required/>
+                                        <div class="clear"> </div>
+                                    </li>
+                                    <li>
+                                        <input title="Please enter the same Password as above" type="password" placeholder="Retype Password" name="password2" required/>
+                                        <div class="clear"> </div>
+                                    </li>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="checkbox" checked=""><i> </i>Please inform me of upcoming Books</label>
+                                    <input type="submit" value="Create Account">
+                                    <div class="clear"> </div>
+                                </ul>
+                            </form>
+
+                            <form name="signInForm" id="signIn" action="/Auth/signIn" method="post">
+                                <ul class="right-form" style="list-style-type:none">
+
+                                    <h3>Login:</h3>
+                                    <div>
+                                        <li>
+                                            <input title="Enter your username" type="text" placeholder="Username" name="userName" autocomplete="off" required/>
+                                        </li>
+                                        <li>
+                                            <input id="userpass" class="userpwd" title="Enter your password" type="password" placeholder="Password" name="password1" autocomplete="off" required/>
+                                            <input id="change" type="button" value="Show" onclick="changepass()">
+                                        </li>
+                                        <div class="forgotpass">
+                                            <h4><a href='javascript:forgotPassword()'>I forgot my Password!</a></h4>
+                                            <input type="submit" value="Sign In">
+                                        </div>
+                                    </div>
+
+                                    <div class="clear"> </div>
+                                    <hr>
+                                    <h3>Login in via your Social media account</h3>
+                                    <div class="row">
+                                        <div class="col col-sm-12">
+
+                                            <div class="btn-group login">
+                                                <a class="btn btn-twitter btn-lg login-btn1" href="/Auth/twitter"><i class="icon-twitter icon-large"></i> Twitter</a>
+                                                <a class="btn btn-facebook btn-lg login-btn2" href="/Auth/facebook"><i class="icon-facebook icon-large"></i> Facebook</a>
+                                                <a class="btn btn-google-plus btn-lg login-btn3" href="/Auth/google"><i class="icon-google-plus icon-large"></i> Google+</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                                <div class="clear"> </div>
+
+                            </form>
+
+                        </div>
+                        <!-----start-copyright---->
+                        <div class="copy-right">
+                            <p>© Copyright 2016 Shubham's Library </p>
+                        </div>
+                        <!-----//end-copyright---->
+
+
+                        <!--/stories-->
+
+                    </div>
+                </div>
+            </div>
+            <!--/col-12-->
+        </div>
+    </div>
+    <hr>
+    <div class="container" id="footer">
+        <div class="row">
+            <div class="col col-sm-12">
+                <h1>Follow Shubham</h1>
+                <div class="btn-group">
+                    <a class="btn btn-twitter btn-lg" href="https://twitter.com/imshubhamsingh_"><i class="icon-twitter icon-large"></i> Twitter</a>
+                    <a class="btn btn-facebook btn-lg" href="https://www.facebook.com/profile.php?id=100002311869554"><i class="icon-facebook icon-large"></i> Facebook</a>
+                    <a class="btn btn-google-plus btn-lg" href="https://plus.google.com/115427087149124374335/about"><i class="icon-google-plus icon-large"></i> Google+</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <hr>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <ul class="list-inline">
+                        <li><i class="icon-facebook icon-2x"></i></li>
+                        <li><i class="icon-twitter icon-2x"></i></li>
+                        <li><i class="icon-google-plus icon-2x"></i></li>
+                        <li><i class="icon-pinterest icon-2x"></i></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <p class="pull-right">Shubham Singh<i class="icon-heart-empty"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
