@@ -281,7 +281,6 @@ form.search-form {
     .switch.fcRed input:checked + label {
         color: red;
     }
-    ;
 }
 
 .spaceEmOut {
@@ -363,7 +362,6 @@ form.search-form {
 }
 
 
-}
 @media(max-width:600px) {
     input#s {
         width: 82%;
@@ -948,7 +946,7 @@ input[type=submit]:hover {
     height: 40px;
     width: 28px;
     display: block;
-    background: url(../images/check-icon.png) no-repeat;
+   /* background: url('../images/check-icon.png') no-repeat;*/
 }
 .price-selection-tree input[type="checkbox"]+label {
     float: left;
@@ -978,13 +976,11 @@ input[type=checkbox].css-checkbox10 + label i.css-label10 {
     width: 28px;
     display: inline-block;
     line-height: 18px;
-    background-repeat: no-repeat;
-    background-position: 0 0px;
     cursor: pointer;
-    background: url(../images/check-icon.png) no-repeat -0px -82px;
+    /*background: url(../images/check-icon.png) no-repeat -0px -82px;*/
 }
 input[type=checkbox].css-checkbox10:checked + label i.css-label10 {
-    background: url(../images/check-icon.png) no-repeat -0px -82px;
+    /*background: url(../images/check-icon.png) no-repeat -0px -82px;*/
     height: 20px;
 }
 
@@ -1015,7 +1011,7 @@ input[type=checkbox].css-checkbox10:checked + label i.css-label10 {
 }
 
 /**/
-/end-copy-right**/
+/**end-copy-right**/
 /*----start-responsive design-----*/
 @media only screen and (max-width:1680px) and (min-width:1440px) {
     .main {
@@ -1687,6 +1683,9 @@ a:hover {
     color: #E45A58;
 }
 @media only screen and (max-width:444px) and (min-width:339px) {
+    .title{
+        font-size:42px !important;
+    }
     .login-btn1 {
         width: 28%;
         font-size: 13px;
@@ -1703,6 +1702,9 @@ a:hover {
     }
 }
 @media only screen and (max-width:339px) and (min-width:320px) {
+    .title{
+        font-size:39px !important;
+    }
     .login-btn1 {
         width: 30%;
         font-size: 12px;
