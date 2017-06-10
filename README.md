@@ -1,6 +1,6 @@
 <h1 align="center">
 <a href="https://github.com/imshubhamsingh/BookReviewLibrary">
-<img src="https://raw.githubusercontent.com/imshubhamsingh/BookReviewLibrary/master/public/images/favicon.ico" alt="PhoneBook" width="200"/></a><br/><br/>
+<img src="https://raw.githubusercontent.com/imshubhamsingh/BookReviewLibrary/master/public/images/favicon.ico" alt="BookReviewLibrary" width="200"/></a><br/><br/>
 Book Review Library
 </h1>
 <h4 align="center">My first Nodejs and Express app</h4>
@@ -11,8 +11,8 @@ Book Review Library
 > Book Review Library is a modern and minimal menu-bar application.
 
 <h1 align="center">
-<img src="https://github.com/imshubhamsingh/BookReviewLibrary/raw/master/screenCapture/screenCapture1.gif" alt="PhoneBook" width="229px"/>
-<img src="https://github.com/imshubhamsingh/BookReviewLibrary/raw/master/screenCapture/screenCapture2.gif" alt="PhoneBook" width="229px"/>
+<img src="https://github.com/imshubhamsingh/BookReviewLibrary/raw/master/screenCapture/screenCapture1.gif" alt="BookReviewLibrary" width="229px"/>
+<img src="https://github.com/imshubhamsingh/BookReviewLibrary/raw/master/screenCapture/screenCapture2.gif" alt="BookReviewLibrary" width="229px"/>
 </h1>
 
 
@@ -26,9 +26,9 @@ Book Review Library
 
 
 <h1 align="center">
-<img src="https://github.com/imshubhamsingh/BookReviewLibrary/raw/master/screenCapture/screenCapture3.gif" alt="PhoneBook" width="179px"/>
-<img src="https://github.com/imshubhamsingh/BookReviewLibrary/raw/master/screenCapture/screenCapture4.gif" alt="PhoneBook" width="179px"/>
-<img src="https://github.com/imshubhamsingh/BookReviewLibrary/raw/master/screenCapture/screenCapture5.gif" alt="PhoneBook" width="179px"/>
+<img src="https://github.com/imshubhamsingh/BookReviewLibrary/raw/master/screenCapture/screenCapture3.gif" alt="BookReviewLibrary" width="179px"/>
+<img src="https://github.com/imshubhamsingh/BookReviewLibrary/raw/master/screenCapture/screenCapture4.gif" alt="BookReviewLibrary" width="179px"/>
+<img src="https://github.com/imshubhamsingh/BookReviewLibrary/raw/master/screenCapture/screenCapture5.gif" alt="BookReviewLibrary" width="179px"/>
 </h1>
 
 ## Development
@@ -41,6 +41,10 @@ Book Review Library
 4.  ```Start mongodb service```
 3. ```npm install && npm start  ```
 
+
+<h3 align="center">or</h3>
+
+>View a live demo of this project on [heroku](https://book-review-library.herokuapp.com/)
 
 >The app uses Goodreads API that allows app to access Goodreads data in order to  provide book reviews that are more personalized, social, and engaging.
 
