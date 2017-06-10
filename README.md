@@ -2,11 +2,11 @@
 <a href="https://github.com/imshubhamsingh/BookReviewLibrary">
 <img src="https://raw.githubusercontent.com/imshubhamsingh/BookReviewLibrary/master/public/images/favicon.ico" alt="PhoneBook" width="200"/></a><br/><br/>
 Book Review Library
-<br/>
-
 </h1>
 <h4 align="center">My first Nodejs and Express app</h4>
-<h5 align="center"></h5>
+<p align="center">
+ <i>The app was developed in the year 2016</i>
+</p>
 
 > Book Review Library is a modern and minimal menu-bar application.
 
@@ -42,7 +42,7 @@ Book Review Library
 3. ```npm install && npm start  ```
 
 
->The app uses Goodreads API that allows app to access Goodreads data in order to  provide book revies that are more personalized, social, and engaging.
+>The app uses Goodreads API that allows app to access Goodreads data in order to  provide book reviews that are more personalized, social, and engaging.
 
 ## Credits
 
