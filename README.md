@@ -11,8 +11,7 @@ Book Review Library
 > Book Review Library is a modern and minimal menu-bar application.
 
 <h1 align="center">
-<img src="https://github.com/imshubhamsingh/BookReviewLibrary/raw/master/screenCapture/screenCapture1.gif" alt="BookReviewLibrary" width="229px"/>
-<img src="https://github.com/imshubhamsingh/BookReviewLibrary/raw/master/screenCapture/screenCapture2.gif" alt="BookReviewLibrary" width="229px"/>
+<img src="https://github.com/imshubhamsingh/BookReviewLibrary/raw/master/screenShots/screenshot1.png" alt="BookReviewLibrary" width="729px"/>
 </h1>
 
 
@@ -26,11 +25,10 @@ Book Review Library
 
 
 <h1 align="center">
-<img src="https://github.com/imshubhamsingh/BookReviewLibrary/raw/master/screenCapture/screenCapture3.gif" alt="BookReviewLibrary" width="179px"/>
-<img src="https://github.com/imshubhamsingh/BookReviewLibrary/raw/master/screenCapture/screenCapture4.gif" alt="BookReviewLibrary" width="179px"/>
-<img src="https://github.com/imshubhamsingh/BookReviewLibrary/raw/master/screenCapture/screenCapture5.gif" alt="BookReviewLibrary" width="179px"/>
+<img src="https://github.com/imshubhamsingh/BookReviewLibrary/raw/master/screenShots/screenshot2.png" alt="BookReviewLibrary" width="779px"/>
 </h1>
 
+>The app uses Goodreads API that allows app to access Goodreads data in order to  provide book reviews that are more personalized, social, and engaging.
 ## Development
 
 ### Run app
@@ -44,9 +42,9 @@ Book Review Library
 
 <h3 align="center">or</h3>
 
->View a live demo of this project on [heroku](https://book-review-library.herokuapp.com/)
+View a live demo of this project on [heroku](https://book-review-library.herokuapp.com/)
 
->The app uses Goodreads API that allows app to access Goodreads data in order to  provide book reviews that are more personalized, social, and engaging.
+
 
 ## Credits
 
