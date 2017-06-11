@@ -123,6 +123,13 @@ var adminController = function (bookService, navUser) {
                     res.redirect('/Auth/addbook' + '?temp=1');
                     db.close();
                 });
+                /*if(book.description === undefined){
+                    res.redirect('/Auth/addbook' + '?temp=2');
+                }else {
+                    collection.insert(book, function (err, results) {
+                        res.redirect('/Auth/addbook' + '?temp=1');
+                        db.close();
+                    });*/
             });
         });
     };

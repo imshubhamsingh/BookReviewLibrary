@@ -41,7 +41,11 @@ var goodreadsService = function () {
             response.on('end', function () {
                 console.log(str);
                 parser.parseString(str, function (err, result) {
-                    cb(null, result.GoodreadsResponse.book.id, result.GoodreadsResponse.book.image_url, result.GoodreadsResponse.book.description);
+                    if(result.error ==='book not found') {
+                        cb(null,undefined,undefined,undefined);
+                    }else {
+                        cb(null, result.GoodreadsResponse.book.id, result.GoodreadsResponse.book.image_url, result.GoodreadsResponse.book.description);
+                    }
                 });
             });
 
