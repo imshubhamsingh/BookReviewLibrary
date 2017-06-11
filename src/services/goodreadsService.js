@@ -3,6 +3,7 @@
 /*jslint es5:true*/
 var http = require('http');
 var xml2js = require('xml2js');
+var goodReadsapi = require('../PropertyFile.json');
 var parser = xml2js.Parser({
     explicitArray: false
 });
@@ -11,7 +12,7 @@ var goodreadsService = function () {
     var getBookById = function (id, cb) {
         var options = {
             host: 'www.goodreads.com',
-            path: '/book/show/' + id + '.xml?key=LNxZkzAQGE7LDW03k1sMxw'
+            path: '/book/show/' + id + '.xml?key='+goodReadsapi.goodreadsapikey
         };
         var callback = function (response) {
             var str = '';
